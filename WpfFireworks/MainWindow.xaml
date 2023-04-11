@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfFireworks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFireworks"
+        xmlns:controls="clr-namespace:WpfFireworks.Controls"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="Black">
+        <controls:FireworkElement x:Name="fireworkElement" GameEnabled="True" Background="Transparent">
+            <behaviors:Interaction.Triggers>
+                <behaviors:EventTrigger EventName="MouseDown">
+                    <behaviors:InvokeCommandAction Command="{Binding NewFireworkCommand}"/>
+                </behaviors:EventTrigger>
+            </behaviors:Interaction.Triggers>
+        </controls:FireworkElement>
+    </Grid>
+</Window>
